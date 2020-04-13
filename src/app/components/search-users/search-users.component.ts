@@ -16,7 +16,16 @@ export class SearchUsersComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   searchUser(){
-    
+    setTimeout(() => {
+      this.prompt = "fetching results..."
+    },100);
+    this.http.get<searchUser>('https://api.github.com/search/users?q='+this.keyword).toPromise().then(data => {
+      console.log(data);
+      this.search = data;
+    })
+    setTimeout(()=>{
+      this.prompt = "";
+    }, 2000)
   }
 
   ngOnInit(): void {
