@@ -15,6 +15,10 @@ export class SearchReposComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
+  searchRepos(){
+    
+  }
+
   ngOnInit(): void {
   }
 
