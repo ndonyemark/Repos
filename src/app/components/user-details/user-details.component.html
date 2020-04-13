@@ -1,1 +1,40 @@
-<p>user-details works!</p>
+<div class="container-fluid mt-5">
+    <div class="row mb-5">
+        <div class="col">
+            <form #submitForm="ngForm">
+                <input type="text" [(ngModel)]="username" name="username" class="form-control mb-3">
+                <button type="submit" (click)="getUser()" class="btn btn-lg btn-block btn-outline-danger">Get User</button>
+                {{ username }}
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header"> <h1 class="text-center text-danger">User-Details</h1> </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">username: <span class="float-right text-danger">{{userInterface.login}}</span></li>
+                    <li class="list-group-item">followers: <span class="float-right text-danger">{{userInterface.followers}}</span></li>
+                    <li class="list-group-item">following: <span class="float-right text-danger">{{userInterface.following}}</span></li>
+                    <li class="list-group-item">public-repos: <span class="float-right text-danger">{{userInterface.public_repos}}</span></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+
+    <h1 class="text-center text-uppercase m-5">{{ userInterface.login }}'s Repos</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 m-3" *ngFor="let repo of userInterface.repos">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item text-danger">{{ repo.name }}</li>
+                      <li class="list-group-item"  *ngIf="repo.description; else elseBlock">{{repo.description}}</li>
+                      <ng-template #elseBlock>no description found</ng-template>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
