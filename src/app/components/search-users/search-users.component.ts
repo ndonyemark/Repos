@@ -9,6 +9,10 @@ import { searchUser } from './search-users.interface';
 })
 export class SearchUsersComponent implements OnInit {
 
+  search: searchUser;
+  keyword: string;
+  prompt: string
+  
   constructor() { }
 
   ngOnInit(): void {
