@@ -9,6 +9,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { SearchUsersComponent } from './components/search-users/search-users.component';
 import { SearchReposComponent } from './components/search-repos/search-repos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SearchUsersComponent,
     SearchReposComponent,
     NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
