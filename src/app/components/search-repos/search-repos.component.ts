@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { userRepo } from './search-repos.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-repos',
