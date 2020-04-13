@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { searchUser } from './search-users.interface';
 
 @Component({
   selector: 'app-search-users',
