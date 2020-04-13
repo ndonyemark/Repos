@@ -20,7 +20,7 @@ export class UserDetailsComponent implements OnInit {
   getUser(){
     this.http.get<users>('https://api.github.com/users/' + this.username + '?access_token=' + environment.api_Key + '').toPromise().then(response => {
       this.userInterface = response;
-      this.http.get(this.userInterface.repos_url + "?access_token=" + this.api_URL).toPromise().then(data => {
+      this.http.get(this.userInterface.repos_url + "?access_token=" + environment.api_Key).toPromise().then(data => {
         this.userInterface.repos = data;
         console.log(this.userInterface.repos);
       });
