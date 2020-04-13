@@ -12,8 +12,8 @@ export class SearchUsersComponent implements OnInit {
   search: searchUser;
   keyword: string;
   prompt: string
-  
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
