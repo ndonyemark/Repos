@@ -9,6 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserDetailsComponent implements OnInit {
 
+  api_URL = 'db1f193399ec158e6c87d40ced0a05e052978cf6';
+  userInterface: users;
+  username: string;
+  items: users;
+  
   constructor() { }
 
   ngOnInit(): void {
