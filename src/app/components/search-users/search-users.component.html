@@ -1,1 +1,33 @@
-<p>search-users works!</p>
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col">
+            <form  #submitForm="ngForm" (submit)="searchUser()">
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Name</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="search user" [(ngModel)]="keyword" name="keyword">
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-danger mb-2">search User</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+    <p class="font-italic">{{ prompt }}</p>
+
+    <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let item of search.items">
+            <a href="{{item.html_url}}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ item.avatar_url }}" alt="Card image cap">
+                <div class="card-body">
+                  <h1 class="card-text text-danger small">{{item.login}}</h1>
+                </div>
+              </div>
+              </a>
+        </div>
+     </div>
+</div>
