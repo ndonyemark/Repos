@@ -9,6 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchReposComponent implements OnInit {
 
+  userRepo: userRepo;
+  keyword: string;
+  userPrompt: string;
+  
   constructor() { }
 
   ngOnInit(): void {
