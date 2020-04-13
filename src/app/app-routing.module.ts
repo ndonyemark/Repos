@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'search-users', component: SearchUsersComponent},
   {path: 'search-repos', component: SearchReposComponent},
   {path: 'home', component: UserDetailsComponent},
+  { path: '', redirectTo:"/goals", pathMatch:"full"},
   { path:'**', component:NotFoundComponent},
 ];
 
