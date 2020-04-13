@@ -12,8 +12,8 @@ export class SearchReposComponent implements OnInit {
   userRepo: userRepo;
   keyword: string;
   userPrompt: string;
-  
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
