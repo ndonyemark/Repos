@@ -13,8 +13,8 @@ export class UserDetailsComponent implements OnInit {
   userInterface: users;
   username: string;
   items: users;
-  
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
