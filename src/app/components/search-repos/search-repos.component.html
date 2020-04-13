@@ -1,1 +1,33 @@
-<p>search-repos works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <form  #submitForm="ngForm" (submit)="searchRepo()">
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Name</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="repository name" [(ngModel)]="keyword" name="keyword">
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-danger mb-2">search Repo</button>
+                        {{ keyword }}
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h1 class="text-danger display-5">{{ userPrompt }}</h1>
+
+    <div class="row">
+      <div class="col">
+        <p class="font-italic">total-results: <cite>{{ userRepo.total_count }}</cite></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3" *ngFor='let item of userRepo.items'>
+        <a href="{{item.html_url}}">
+        <p class="font-italic">{{ item.name }}</p>
+      </a>
+      </div>
+    </div>
+</div>
