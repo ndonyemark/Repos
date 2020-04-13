@@ -17,7 +17,13 @@ export class UserDetailsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   getUser(){
-    
+    this.http.get<users>('https://api.github.com/users/' + this.username + '?access_token=' + this.api_URL + '').toPromise().then(response => {
+      this.userInterface = response;
+      this.http.get(this.userInterface.repos_url + "?access_token=" + this.api_URL).toPromise().then(data => {
+        this.userInterface.repos = data;
+        console.log(this.userInterface.repos);
+      });
+      });
   }
 
   ngOnInit(): void {
