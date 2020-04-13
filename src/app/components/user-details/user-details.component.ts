@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { users } from './user-details.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-details',
