@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { users } from './user-details.interface';
 import { HttpClient } from '@angular/common/http';
+import { api_Key, environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-user-details',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserDetailsComponent implements OnInit {
 
-  api_URL = 'db1f193399ec158e6c87d40ced0a05e052978cf6';
+  // api_URL = 'db1f193399ec158e6c87d40ced0a05e052978cf6';
   userInterface: users;
   username: string;
   items: users;
@@ -17,7 +18,7 @@ export class UserDetailsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   getUser(){
-    this.http.get<users>('https://api.github.com/users/' + this.username + '?access_token=' + this.api_URL + '').toPromise().then(response => {
+    this.http.get<users>('https://api.github.com/users/' + this.username + '?access_token=' + environment.api_Key + '').toPromise().then(response => {
       this.userInterface = response;
       this.http.get(this.userInterface.repos_url + "?access_token=" + this.api_URL).toPromise().then(data => {
         this.userInterface.repos = data;
