@@ -16,6 +16,10 @@ export class UserDetailsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
+  getUser(){
+    
+  }
+
   ngOnInit(): void {
   }
 
