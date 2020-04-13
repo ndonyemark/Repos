@@ -15,6 +15,10 @@ export class SearchUsersComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
+  searchUser(){
+    
+  }
+
   ngOnInit(): void {
   }
 
