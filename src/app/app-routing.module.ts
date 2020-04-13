@@ -6,7 +6,11 @@ import { SearchUsersComponent } from './components/search-users/search-users.com
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'search-users', component: SearchUsersComponent},
+  {path: 'search-repos', component: SearchReposComponent},
+  {path: 'home', component: UserDetailsComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
